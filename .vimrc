@@ -1,4 +1,3 @@
-
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -7,16 +6,22 @@ endif
 
 call plug#begin()
 Plug 'junegunn/seoul256.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'cocopon/iceberg.vim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'preservim/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
+
 call plug#end()
 
 " Set themes
-colo seoul256
-let g:airline_theme='bubblegum'
+colorscheme iceberg
+set background=dark
+let g:airline_theme='iceberg'
 
 " display line numbers on the sidebar
 set number
@@ -55,19 +60,15 @@ set list
 set listchars=tab:>.,trail:.
 
 " Flash on the screen instead of making the bell sound
-set noerrorbe the screen instead of making the bell sound
 set noerrorbells
 set visualbell
 
 filetype on
-syntax on
+syntax on:
 
 " set column line
-set colorcolumn=80lls
-set visualbell
+set colorcolumn=80
 
 filetype on
 syntax on
 
-" set column line
-set colorcolumn=80
